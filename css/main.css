@@ -1,0 +1,938 @@
+:root {
+  --active: #851e31;
+  --text: #851e3185;
+  --white: #ffffff;
+  --shadow: #000000b3;
+  --lightshadow: #00000033; 
+  --background: #F5F1F1 ;
+  --overlay: #e1d3d654;
+  --lightheading: #ddc8c8;
+  --contrast: #bf8a94;
+  --mainfont: 'Poppins', sans-serif;
+  --cursive: 'Inspiration', cursive;
+}
+
+* {
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--mainfont);
+}
+a {
+  text-decoration: none;
+}
+ul, li {
+  list-style: none;
+}
+
+/*header items */
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  padding: 0 20px;
+  z-index: 1000;
+}
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  max-width: 75px; 
+}
+#navbarContent {
+  text-align: left;
+}
+
+/*#menu {
+  width: 90%;
+}*/
+#menu .nav-link {
+  color: var(--text);
+  text-transform: uppercase;
+  transition: all 0.4s ease-out;
+}
+#menu .nav-link.active {
+  box-shadow: 0px 4px 20px var(--lightshadow);
+}
+#menu .nav-link:hover {
+  background-color: var(--active);
+  color: var(--white) !important;
+  box-shadow: 2px 5px 9px var(--shadow);
+  transform: scale(1) translateY(-5px);
+}
+.navbar-fixed-top.scrolled {
+  background-color: var(--white) !important;
+  transition: background-color 200ms linear;
+  box-shadow: 0px 4px 20px var(--lightshadow);
+}
+.nav-link.scrolled {
+  color: var(--active) !important;
+}
+#menu .contactmenu{
+  border-radius: 2px;
+  border: none;
+  transition: all 100ms linear;
+  color: var(--active) !important;
+  text-transform: uppercase;
+  font-weight: 500;
+  box-shadow: 0px 4px 20px var(--lightshadow);
+}
+#menu .contactnav {
+  margin-right: 50px !important;
+}
+#menu .contactmenu:hover, #menu .contactmenu.scrolled{
+  background-color: var(--background);
+  transition: all 100ms linear;
+  box-shadow: 0px 4px 3px var(--active);
+  color: var(--active) !important;
+}
+#menu .contactmenu.scrolled:hover {
+  font-weight: 900;
+}
+
+/*footer*/
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 10%;
+}
+.social {
+  position: absolute;
+  z-index: 10;
+  bottom: 20px;
+  left: 80px;
+}
+.social li a {
+  display: inline-block;
+  margin-right: 20px;
+  filter: opacity(0.5);
+  transform: scale(0.7);
+  transition: 0.5s;
+}
+.social li a:hover {
+  transform: scale(0.8) translateY(-15px);
+  filter: opacity(1) drop-shadow(2px 4px 6px var(--white));
+}
+.copyright {
+  position: absolute;
+  bottom: 22px;
+  font-size: 0.8em;
+  font-weight: 100;
+  opacity: 0.5;
+  line-height: 1.2;
+}
+
+.landing {
+  position: absolute;
+  right: 0;
+  min-height: 100vh;
+  background: var(--overlay);
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.landingpages {
+  background: var(--lightheading);
+}
+.landing video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay.overlaymyworks {
+  background-color: var(--overlay);
+}
+
+.image img{
+  border-radius: 50% 20px 150px;
+  box-shadow: 4px 3px 11px 1px var(--lightshadow);
+  position: absolute;
+  left: 10%;
+  top: 30%;
+  width: 25%;
+}
+
+.text {
+  /* ok for laptop 
+  position: absolute;
+  right: 12%;
+  top: 20%;
+  z-index: 10;
+  */
+  position: absolute;
+  right: 10%;
+  top: 18%;
+}
+
+.text span.cursive {
+  font-family: var(--cursive);
+  text-transform: capitalize;
+  letter-spacing: 3px;
+  font-size: 3.2em;
+  line-height: 1.3em;
+  text-shadow: 2px 3px 5px var(--shadow);
+  color: var(--white);
+  background-color: var(--text);
+}
+
+.text h2 {
+    font-size: 1.8em;
+    font-weight: 100;
+    text-transform: uppercase;
+    line-height: 2;
+}
+.text h3 {
+  font-size: 1em;
+  text-transform: uppercase;
+  margin: 25px 0 3px;
+  font-weight: 100;
+}
+
+button {
+  margin: 50px 0;
+  padding: 10px 20px;
+  background-color: var(--active);
+  border-radius: 2px;
+  border: none;
+  box-shadow: 2px 5px 9px var(--shadow);
+  transition: all 0.5s;
+  color: var(--white) !important;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+button a {
+  color: var(--white) !important;
+}
+button:hover {
+  transform: scale(1.1) translateY(-10px);
+}
+
+/*my works*/
+
+/* test with carousel 2*/
+.carousel-item {
+  height: 32rem;
+  background: var(--white);
+  color: white;
+  position: fixed;
+  top: 20%;
+  bottom: 10%;
+  left: 0;
+  border: none !important;
+  border-radius: 15% 20px;
+  width: 80%;
+  margin: auto 10%;
+  box-shadow: 2px 5px 9px var(--lightshadow);
+}
+.overlay-image {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  border-radius: 15% 20px;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.7;
+}
+.carousel .container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  width: 60%;
+  border-top-left-radius: 10%;
+  margin-right: 40%;
+  background: linear-gradient(90deg, #ffffff 42%, transparent);
+}
+.carousel .container button {
+  margin: 20px auto 10px;
+}
+.carousel-indicators button {
+  background-color: var(--contrast) !important;
+  box-shadow: none;
+  margin: 5% 10px;
+  padding: 3px 12px;
+}
+.carousel-indicators button.active {
+  background-color: var(--active) !important;
+}
+.carousel-indicators button:hover {
+  transform: none;
+}
+.carousel-indicators {
+  position: fixed;
+  height: 50px;
+  bottom: 5%;
+}
+.carousel-control-prev, .carousel-control-next {
+  position: fixed;
+}
+.carousel h1 {
+  color: var(--active);
+  margin-bottom: 25px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.carousel h2 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 15px 0;
+}
+.carousel .container p{
+  line-height: 1;
+  margin: 10px auto;
+}
+.carousel div img {
+  width: 20%;
+  border-radius: 50%;
+}
+/* end test with carousel 2*/
+
+.project {
+  flex-direction: column;
+  z-index: 20;
+  margin: 80px auto;
+}
+
+.projectdiv {
+  z-index: 20;
+  background-color: var(--white);
+  border-radius: 50px 20px 150px;
+  margin: 30px;
+  padding: 35px 20px;
+}
+.projectdiv h1 {
+  color: var(--active);
+  margin-bottom: 25px;
+  margin: 10px 0;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.projectsection {
+  display: flex;
+  z-index: 20;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.projectinfo {
+  margin: 30px 0;
+  width: 25%;
+  font-weight: 100;
+}
+.projectinfo h2 {
+  font-size: 1.5em;
+  font-weight: 100;
+  margin: 15px 0;
+}
+.projectinfo p {
+  color: var(--shadow);
+}
+
+.projectimg {
+  max-width: 75%;
+}
+
+.projectdiv img {
+  box-shadow: 2px 5px 9px var(--lightshadow);
+  margin: 0 10px;
+  max-height: 1350px;
+}
+.projectimg .desktop {
+  max-width: 60%;
+}
+.projectimg .mobile {
+  max-width: 30%;
+}
+.projectimg .gelatoimg, .goalimg {
+  box-shadow: none !important;
+  width: 30%;
+}
+.projectimg .linkedinimg {
+  width: 90%;
+  margin: auto 5%;
+}
+.projectimg .modaimg {
+  width: 50%;
+  height: 280px;
+}
+.projectimg .brochure {
+  width: 45%;
+}
+
+
+/* services */
+#areas {
+  margin: 100px auto 0;
+  z-index: 100;
+}
+
+#areas h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px auto;
+  color:var(--active);
+}
+#areas img {
+  margin: 10px auto;
+}
+#areas button {
+  margin: 0 !important;
+  box-shadow: none;
+  transition: all 0.3s;
+}
+#areas button:hover {
+  box-shadow: 2px 5px 9px var(--lightshadow) !important;
+  transform: none !important;
+  font-weight: 500;
+}
+
+#areas .content {
+  height: 100px;
+}
+.card {
+  border-radius: 0 20px 20% !important;
+  margin: auto 5px;
+  width: 24%;
+  height: 400px;
+}
+.card h2 {
+  font-weight: 100;
+  font-size: 1.8rem;
+}
+.card-body {
+  padding-top: 0 !important;
+}
+.backgroundEffect {
+  bottom: 0;
+  width: 100%;
+  height: 0px;
+}
+.card:hover {
+  color: var(--white);
+  transform: scale(1.025);
+  box-shadow: 0px 5px 10px var(--lightshadow);
+}
+
+.card:hover .backgroundEffect {
+  bottom: 0;
+  left: 0;
+  height: 400px;
+  border-radius: 0 20px 20%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background: var(--active);
+  transition: all 0.5s;
+}
+
+.card:hover h2 {
+  color: var(--white) !important;
+}
+.card:hover button {
+  background-color: var(--white);
+}
+.card:hover button a {
+  color:var(--active) !important;
+}
+
+#packages {
+  z-index: 200;
+  margin-top: 100px;
+}
+#packages h1, #packages h2 {
+  z-index: 50;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px auto;
+}
+ #packages h1, #areas li{
+  color: var(--lightheading);
+  transition: color 0.3s ease;
+}
+#packages h1{
+  color: var(--white);
+}
+#packages .option, .copyright p {
+  color: var(--active);
+}
+#webdevelop, #uxdesign {
+  margin: 50px auto 100px;
+}
+.container.pack{
+  width: 80%;
+}
+#packages .card{
+  margin: 20px 10px;
+  line-height: 2;
+  font-weight: 100;
+  height: 450px;
+}
+#packages .card.active{
+  border: none;
+  box-shadow: 0px 7px 5px 2px var(--lightshadow);
+}
+#packages .card.active h2 {
+  color: var(--white);
+}
+#packages .card.active li, #packages .card:hover li {
+  color: var(--active);
+}
+#packages .card ul {
+  margin-top: 35px;
+}
+#packages .card:hover {
+  box-shadow: 0px 7px 5px 2px var(--lightshadow) !important;
+}
+
+.backgroundPack {
+  top: 0;
+  width: 100%;
+  height: 0px;
+}
+#packages .card.active .backgroundPack, #packages .card:hover .backgroundPack {
+  top: 0;
+  left: 0;
+  height: 80px;
+  border-radius: 0 20px 20%;
+  width: 100%;
+  position: absolute;
+  background: var(--active);
+  transition: all 0.5s;
+}
+.recommended {
+  background-color: var(--contrast);
+  font-size: 0.7rem;
+  width: 40%;
+  margin: auto;
+  padding: 5px;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.recommended span {
+  color: var(--white);
+}
+
+.tailor {
+  width: 60%;
+  margin: 50px auto;
+}
+
+
+/* media query sm */
+@media (max-width: 767px) {
+  header {
+    padding: 0 20px;
+  }
+  #menu ul {
+    background-color: var(--white);
+    box-shadow: 0px 4px 3px var(--active);
+    text-align: center;
+  }
+  #menu .nav-link{ 
+  padding: 5px 20px;
+  }
+  #menu .contactmenu {
+    box-shadow: 0px 4px 3px var(--active);
+  }
+  #menu .nav-link:hover, #menu .nav-link.active {
+    box-shadow: none;
+    transform: none;
+    font-weight: 900;
+}
+  .social li {
+    width: 35px;
+    margin: 3px;
+    position: relative;
+    left: -18%;
+  }
+  .social li a {
+    display: inline-block;
+    margin: 0;
+    transform: scale(0.6);
+    filter: none;
+    opacity: 0.5;
+  }
+  .text h2 {
+    font-size: 1.1em;
+  }
+  .text h3 {
+    font-size: 0.8em;
+  }
+  .text span.cursive {
+    font-size: 2.5em;
+    line-height: 1.3em;
+  }
+  .text {
+    right: 5%;
+    width: 80%;
+    top: 20%;
+  }
+  .image img {
+    left: -4% !important;
+    width: 38% !important;
+    top: 39% !important;
+    z-index: 500;
+  }
+  .text h3 {
+    margin: 0 !important;
+  }
+  .text button {
+    margin: 20px auto 5px;
+    font-size: 0.7em;
+    box-shadow: 2px 5px 9px var(--lightshadow);
+  }
+  .copyright {
+    bottom: -1%;
+    font-size: 0.5em;
+    position: fixed;
+  }
+  .social {
+    bottom: 2%;
+    left: -10%;
+    padding: 0;
+  }
+  section.project {
+    width: 90%;
+    margin: 30px 5%;
+    font-size: 1em;
+    position: absolute;
+    top: 10%;
+  }
+  .projectdiv {
+    margin: 20px 5px;
+  }
+  .projectinfo {
+    width: 100%;
+  }
+  .projectdiv h1 {
+    font-size: 1.2em;
+  }
+  .projectinfo h2 {
+    font-size: 1em;
+  }
+  .projectinfo p, .projectimg img:nth-of-type(2), .projectimg img:nth-of-type(3){
+    display: none;
+  }
+  .projectimg img:first-of-type {
+    display:flex;
+  }
+  .carousel-item {
+    width: 92%;
+    margin: auto 4%;
+  }
+  .carousel .container button {
+    transform: none !important;
+    box-shadow: none;
+  }
+  .carousel .container p {
+    font-size: 0.8em;
+  }
+  .carousel-indicators button {
+    margin: 5% 7px;
+    padding: 2px 10px;
+  }
+  #menu .contactnav {
+    width: 100%;
+  }
+  #areas .content {
+    height: 100px;
+  }
+  #areas button {
+    margin: 10px 0!important;
+  }
+  .card h2 {
+    font-size: 1.3rem;
+  }
+  .card {
+    height: 300px;
+    margin: 5%;
+    width: 40%;
+  }
+  .card:hover .backgroundEffect {
+    height: 300px;
+  }
+}
+
+/*media query sm*/
+@media (min-width: 300px) and (max-width: 450px){
+  .text h2 {
+    font-size: 1em;
+  }
+  .carousel .container {
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+  }
+  .carousel-item {
+    height: 25rem;
+    width: 100%;
+    margin: auto 3%;
+  }
+  .carousel h2 {
+    font-size: 1.2em;
+  }
+  .carousel-indicators {
+    height: 10px;
+}
+  .carousel-indicators button {
+    margin: 5% 5px;
+    padding: 4px 8px;
+  }
+  #areas h1 {
+    margin: 20px;
+  }
+  #areas .card {
+    width: 90%;
+    height: 200px;
+    margin: 10px auto;
+  }
+  .card:hover .backgroundEffect {
+    height: 200px;
+  }
+  #areas .content {
+    height: 0px;
+    position: relative;
+    bottom: 75%;
+  }
+  #areas .card h2 {
+    color: var(--white);
+    background: var(--text);
+    text-align: center;
+  }
+  #areas button {
+    margin: 10px 20%!important;
+    width: 60%;
+  }
+  #areas img {
+    margin: 10px auto;
+    width: 100%;
+    height: 175px;
+    border-radius: 0 20px 35px 0;
+    filter: opacity(0.5);
+  }
+  #areas .card-body {
+    height: 200px !important;
+    position: relative;
+    bottom: 40%;
+  }
+  #packages .card {
+    width: 100%;
+    margin: 10px 0;
+    height: fit-content;
+  }
+  #packages .card ul {
+    margin-top: 30px;
+    padding: 0;
+  }
+  #packages .card li {
+    padding: 3px;
+    font-size: 0.8em;
+  }
+  .recommended {
+    width: 55%;
+  }
+  .container.pack {
+    width: 94%;
+    margin: auto;
+  }
+  .tailor {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+@media (min-width: 425px) and (max-width: 767px){
+  .image img {
+    top: 60% !important;
+  }
+  .carousel-item {
+    height: 30rem;
+  }
+}
+
+/*media query md*/
+@media (min-width: 768px) and (max-width: 991px) {
+  .landing {
+    padding: 0 30px;
+  }
+  .image img {
+    left: 0%;
+    top: 29%;
+  }
+  #menu .nav-link {
+    padding: 10px 25px;
+  }
+  .text h2 {
+    font-size: 1.3em;
+  }
+  .card {
+    height: 350px;
+    margin: 2% 5%;
+    width: 40%;
+  }
+  .card:hover .backgroundEffect {
+    height: 350px;
+  }
+  /*test */
+  .container.pack {
+    margin: 10px 0 20px;
+    width: 100%;
+  }
+  .recommended {
+    width: 65%;
+  }
+  #packages .card ul {
+    margin-top: 5px;
+    padding-left: 5px;
+  }
+  #packages .card li {
+    font-size: 0.8em;
+  }
+  .copyright {
+    left: 10px;
+    bottom: 0;
+  }
+  .tailor {
+    width: 80%;
+    margin: 10px 10%;
+  }
+  #areas button {
+    margin: 15px 0!important;
+  }
+  #areas #packages button {
+    width: 25%;
+    margin: auto 20px 10px !important;
+  }
+  .carousel-indicators button {
+    margin: 5% 8px;
+    padding: 2px 10px;
+  }
+  .carousel-item {
+    height: 25rem;
+    width: 92%;
+    margin: auto 4%;
+  }
+  .carousel .container {
+    height: 25rem;
+    width: 70%;
+    margin-right: 30%;
+    padding-top: 30px;
+  }
+  #amantesproject h1 {
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  #amantesproject h2 {
+    font-size: 1.2em;
+  }
+  #packages .card.active h2, #packages .card.inactive h2 {
+    padding: 10px 0;
+    margin: 0;
+  }
+  .overlay-image {
+    background-position-x: 60px;
+  }
+}
+
+/*media query lg*/
+@media (min-width: 992px) and (max-width: 1199px) {
+  #menu .nav-link:first-of-type {
+    margin-left: 1rem!important;
+  }
+  .landing {
+    padding: 0 100px;
+  }
+  .text h2 {
+    font-size: 1.5em;
+  }
+
+  .image img {
+    width: 25%;
+    left: 5%;
+    top: 30%;
+  }
+  .card {
+    margin: 2% 5%;
+    width: 40%;
+  }
+  .container.pack {
+    margin: 10px 0 20px;
+    width: 100%;
+  }
+  #packages .card ul {
+    margin-top: 25px;
+  }
+  .recommended {
+    width: 55%;
+  }
+  #packages .card li {
+    font-size: 0.9em;
+  }
+  .copyright {
+    left: 40px;
+  }
+  .tailor {
+    width: 70%;
+    margin: 60px auto 30px;
+    float: right;
+  }
+  #areas #packages button {
+    width: 25%;
+    margin: auto 20px 10px !important;
+  }
+  .carousel-indicators button {
+    margin: 5% 8px;
+    padding: 2px 10px;
+  }
+}
+
+/*media query xl */
+@media (min-width: 1200px) {
+  .image img {
+    width:20%;
+  }
+  .nav-item {
+    margin: auto 20px;
+  }
+  #menu .nav-link {
+    padding: 10px;
+  }
+  .text h2 {
+    font-size: 2em;
+  }
+  .carousel-item {
+    height: 40rem;
+  }
+}
+
+
+/*media query xxl */
+@media (min-width: 1600px) {
+  .text h2 {
+    font-size: 2.2em;
+  }
+}
